@@ -1,6 +1,3 @@
-/*
- * Jacob Riggs (jacobriggs83@gmail.com)
- */
 package com.jriggs.stock_analyzer;
 
 import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
@@ -11,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author CyberPower
+ * @author Jacob Riggs (jacobriggs83@gmail.com)
  */
 public class Startup {
 

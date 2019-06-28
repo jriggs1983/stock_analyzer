@@ -7,7 +7,15 @@ package com.jriggs.stock_analyzer.params;
  */
 public class Configuration {
 
-    
-    public final String API_KEY = "KYSTXRCY4FVM6VKW";
-    
+    public static final String API_KEY = "KYSTXRCY4FVM6VKW";
+    public static final String URI = "https://www.alphavantage.co/query";
+
+    public static String getUri() {
+        return URI;
+    }
+
+    public static String getApiKey() {
+        return API_KEY;
+    }
+
 }

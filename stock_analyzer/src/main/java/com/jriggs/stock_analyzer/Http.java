@@ -68,7 +68,7 @@ public class Http {
                 .setSSLSocketFactory(sslConnectionSocketFactory)
                 .build()) {
             URIBuilder builder = new URIBuilder(uri);
-    
+
             for (NameValuePair nvp : params.getNameValuePair()) {
                 builder.setParameter(nvp.getName(), nvp.getValue());
             }
