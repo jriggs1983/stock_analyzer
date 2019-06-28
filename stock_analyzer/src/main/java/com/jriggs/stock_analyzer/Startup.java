@@ -3,8 +3,8 @@
  */
 package com.jriggs.stock_analyzer;
 
-
 import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
+import com.jriggs.stock_analyzer.params.Params;
 import com.jriggs.stock_analyzer.predictions.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class Startup {
     public static void main(String[] args) {
         try {
             Http http = new Http();
-            String s = http.get(null, null, "https://www.alphavantage.co/query");
+            String s = http.get(null, buildParams(), "https://www.alphavantage.co/query");
             TimeSeries ts = TimeSeries.fromJson(s);
 
             List<Prediction> predictions = new ArrayList();
@@ -39,4 +39,15 @@ public class Startup {
         }
 
     }
+
+    private static Params buildParams() {
+        Params p = new Params();
+        p.addParam("apikey", "KYSTXRCY4FVM6VKW");
+        p.addParam("function", "TIME_SERIES_INTRADAY");
+        p.addParam("interval", "5min");
+        p.addParam("symbol", "NFLX");
+        p.addParam("outputsize", "full");
+        return p;
+    }
+
 }

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import org.apache.http.Header;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.utils.URIBuilder;
@@ -67,11 +68,11 @@ public class Http {
                 .setSSLSocketFactory(sslConnectionSocketFactory)
                 .build()) {
             URIBuilder builder = new URIBuilder(uri);
-            builder.setParameter("apikey", "KYSTXRCY4FVM6VKW");
-            builder.setParameter("function", "TIME_SERIES_INTRADAY");
-            builder.setParameter("interval", "5min");
-            builder.setParameter("symbol", "AMZN");
-            builder.setParameter("outputsize", "full");
+    
+            for (NameValuePair nvp : params.getNameValuePair()) {
+                builder.setParameter(nvp.getName(), nvp.getValue());
+            }
+
             org.apache.http.client.methods.HttpGet httpGet = new org.apache.http.client.methods.HttpGet(builder.build());
             if (headers != null) {
                 httpGet.setHeaders(headers.toArray(new Header[headers.size()]));

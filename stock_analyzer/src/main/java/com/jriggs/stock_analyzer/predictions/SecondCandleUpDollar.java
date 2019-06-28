@@ -17,8 +17,6 @@ public class SecondCandleUpDollar implements Prediction {
 
     @Override
     public int getPercentUp(TimeSeries ts) {
-        Boolean yesterdayGreen = null;
-
         Date startDate = null;
         double firstCandleClose = 0;
         
@@ -35,7 +33,7 @@ public class SecondCandleUpDollar implements Prediction {
                 total++;
                 worked = false;
             }
-            if (!worked && (u.getClose() > (firstCandleClose + 8))) {
+            if (!worked && (u.getClose() > (firstCandleClose + 1))) {
                 workCount++;
                 worked = true;
             }
