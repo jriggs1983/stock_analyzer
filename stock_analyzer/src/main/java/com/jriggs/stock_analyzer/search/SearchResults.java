@@ -1,5 +1,9 @@
 package com.jriggs.stock_analyzer.search;
 
+import com.google.gson.Gson;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -8,43 +12,22 @@ import org.json.JSONObject;
  */
 public class SearchResults {
 
-    private String symbol;
-    private String name;
-    private String type;
-    private String region;
-    private String marketOpen;
-    private String marketClose;
-    private String timezone;
-    private String currency;
-    private String matchScore;
+    private List<SearchResult> results;
 
     public static SearchResults parseJson(String json) {
-        return null;
-    }
-
-    private void parse(String json) {
+        SearchResults sr = new SearchResults();
         JSONObject jsonObject = new JSONObject(json);
-        jsonObject.keySet();
-
+        Gson gson = new Gson();
+        sr.results = new ArrayList();
+        JSONArray jsonArray = jsonObject.getJSONArray("bestMatches");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            gson.fromJson(jsonArray.get(i).toString(), SearchResult.class);
+        }
+        return sr;
     }
 
-//            JSONObject jsonObject = new JSONObject(json);
-//        String name = parseName(jsonObject);
-//        JSONObject tsElement = jsonObject.getJSONObject(name);
-//        Set<String> keys = tsElement.keySet();
-//        TimeSeries ts = new TimeSeries();
-//        ts.setTimeUnit(name);
-//        ts.units = new ArrayList();
-//        Gson gson = new Gson();
-//
-//        for (String key : keys) {
-//            Unit u = gson.fromJson(tsElement.getJSONObject(key).toString(), Unit.class);
-//            u.setDate(parseDateFromName(key));
-//            ts.units.add(u);
-//        }
-//        ts.sort();
-//        return ts;
     public static void main(String[] args) {
+        //<editor-fold defaultstate="collapsed" desc="json">
         String json = "{\n"
                 + "    \"bestMatches\": [\n"
                 + "        {\n"
@@ -148,5 +131,24 @@ public class SearchResults {
                 + "        }\n"
                 + "    ]\n"
                 + "}";
+//</editor-fold>
+
+        SearchResults sr = new SearchResults();
+ 
+        System.out.println(sr);
+
+    }
+
+    public static class SearchResult {
+
+        private String symbol;
+        private String name;
+        private String type;
+        private String region;
+        private String marketOpen;
+        private String marketClose;
+        private String timezone;
+        private String currency;
+        private String matchScore;
     }
 }
