@@ -1,5 +1,6 @@
 package com.jriggs.stock_analyzer;
 
+import com.jriggs.stock_analyzer.datareaders.Http;
 import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
 import com.jriggs.stock_analyzer.params.Params;
 import com.jriggs.stock_analyzer.predictions.*;
@@ -40,9 +41,9 @@ public class Startup {
     private static Params buildParams() {
         Params p = new Params();
         p.addParam("apikey", "KYSTXRCY4FVM6VKW");
-        p.addParam("function", "TIME_SERIES_INTRADAY");
-        p.addParam("interval", "5min");
-        p.addParam("symbol", "NFLX");
+        p.addParam("function", "TIME_SERIES_WEEKLY");
+//        p.addParam("interval", "5min");
+        p.addParam("symbol", "CRM");
         p.addParam("outputsize", "full");
         return p;
     }

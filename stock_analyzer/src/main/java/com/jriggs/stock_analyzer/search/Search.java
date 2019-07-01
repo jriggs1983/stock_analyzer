@@ -1,6 +1,6 @@
 package com.jriggs.stock_analyzer.search;
 
-import com.jriggs.stock_analyzer.Http;
+import com.jriggs.stock_analyzer.datareaders.Http;
 import com.jriggs.stock_analyzer.params.Configuration;
 import com.jriggs.stock_analyzer.params.SearchParams;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.jriggs.stock_analyzer;
+package com.jriggs.stock_analyzer.datareaders;
 
 import com.jriggs.stock_analyzer.params.TransactionParams;
 import java.io.ByteArrayOutputStream;
