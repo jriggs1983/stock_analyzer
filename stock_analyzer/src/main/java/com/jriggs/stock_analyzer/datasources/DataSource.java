@@ -1,8 +1,8 @@
 package com.jriggs.stock_analyzer.datasources;
 
 import com.jriggs.stock_analyzer.jsonentity.IndicatorSeries;
-import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
 import com.jriggs.stock_analyzer.params.Params;
+import com.jriggs.stockanalyzer.jsonentity.TimeSeries;
 
 /**
  *

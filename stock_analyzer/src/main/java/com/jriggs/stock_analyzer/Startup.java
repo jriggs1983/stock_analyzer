@@ -1,9 +1,9 @@
 package com.jriggs.stock_analyzer;
 
 import com.jriggs.stock_analyzer.datareaders.Http;
-import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
 import com.jriggs.stock_analyzer.params.Params;
 import com.jriggs.stock_analyzer.predictions.*;
+import com.jriggs.stockanalyzer.jsonentity.TimeSeries;
 import java.util.ArrayList;
 import java.util.List;
 

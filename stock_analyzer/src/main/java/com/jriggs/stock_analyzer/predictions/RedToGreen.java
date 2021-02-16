@@ -1,7 +1,7 @@
 package com.jriggs.stock_analyzer.predictions;
 
-import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
-import com.jriggs.stock_analyzer.jsonentity.TimeSeries.Unit;
+import com.jriggs.stockanalyzer.jsonentity.TimeSeries;
+import com.jriggs.stockanalyzer.jsonentity.TimeSeries.Unit;
 
 
 /**

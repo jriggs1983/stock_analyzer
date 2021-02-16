@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.jriggs.stock_analyzer.datareaders.DataReader;
 import com.jriggs.stock_analyzer.datareaders.RestDataReader;
 import com.jriggs.stock_analyzer.jsonentity.IndicatorSeries;
-import com.jriggs.stock_analyzer.jsonentity.TimeSeries;
 import com.jriggs.stock_analyzer.params.Params;
+import com.jriggs.stockanalyzer.jsonentity.TimeSeries;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -102,16 +102,26 @@ public class AlphaVantageDataSource implements DataSource {
 //        }
     }
 
+//    @Override
+//    public TimeSeries getTimeSeries(Params params) {
+//        
+//        dataReaders.get(0).
+//        
+//    }
+//
+//    @Override
+//    public IndicatorSeries getIndicatorSeries(Params params) {
+//        return null;
+//    }
+
     @Override
     public TimeSeries getTimeSeries(Params params) {
-        
-        dataReaders.get(0).
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public IndicatorSeries getIndicatorSeries(Params params) {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

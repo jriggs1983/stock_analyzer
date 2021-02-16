@@ -32,7 +32,7 @@ public class Http {
                         SSLConnectionSocketFactory.getDefaultHostnameVerifier());
 
         CloseableHttpResponse response;
-        try (CloseableHttpClient httpClient = HttpClientBuilder.create()
+        try ( CloseableHttpClient httpClient = HttpClientBuilder.create()
                 .setSSLSocketFactory(sslConnectionSocketFactory)
                 .build()) {
 
@@ -64,7 +64,7 @@ public class Http {
                         null,
                         SSLConnectionSocketFactory.getDefaultHostnameVerifier());
         CloseableHttpResponse response;
-        try (CloseableHttpClient httpClient = HttpClientBuilder.create()
+        try ( CloseableHttpClient httpClient = HttpClientBuilder.create()
                 .setSSLSocketFactory(sslConnectionSocketFactory)
                 .build()) {
             URIBuilder builder = new URIBuilder(uri);
